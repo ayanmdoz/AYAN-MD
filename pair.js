@@ -40,7 +40,7 @@ const config = {
     MAX_RETRIES: 3,
     GROUP_INVITE_LINK: 'https://chat.whatsapp.com/LdsQWrPsEHOGLH94fiuQ7i?mode=ac_t',
     ADMIN_LIST_PATH: './admin.json',
-    IMAGE_PATH: 'https://i.ibb.co/qFJ08v4J/da3ed85877e73e60.jpg',
+    IMAGE_PATH: 'https://files.catbox.moe/a51qw5.jpeg',
     NEWSLETTER_JID: '120363420985544024@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
@@ -388,7 +388,7 @@ async function SendSlide(socket, jid, newsItems) {
             imgBuffer = await resize(item.thumbnail, 300, 200);
         } catch (error) {
             console.error(`Failed to resize image for ${item.title}:`, error);
-            imgBuffer = await Jimp.read('https://i.ibb.co/qFJ08v4J/da3ed85877e73e60.jpg);
+            imgBuffer = await Jimp.read('https://files.catbox.moe/a51qw5.jpeg');
             imgBuffer = await imgBuffer.resize(300, 200).getBufferAsync(Jimp.MIME_JPEG);
         }
         let imgsc = await prepareWAMessageMedia({ image: imgBuffer }, { upload: socket.waUploadToServer });
